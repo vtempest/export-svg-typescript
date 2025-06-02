@@ -7,7 +7,6 @@ import path from "path";
  * Script to process SVG files from input folder and generates JS export index,
  * Barrel Roll for the icons js files, enabling tree shaking to only the icons the
  * user imports, enables customizing colors and size, and shows tooltip preview.
- * usage: node convert-svg-to-js.js -i ./src/icons-svg -o ./dist/icons
  * @param {string} inputFolder - Path to folder containing SVG files
  * @param {string} outputFolder - Path to folder where JS files will be generated
  */
@@ -41,10 +40,8 @@ export function convertSVGFolderToExportIndex(inputFolder, indexPath) {
       unescape(encodeURIComponent(svgContent))
     )}`;
 
-    const jsContent = `
-/**
-* Returns a customized SVG string for icon ${baseName.replace(/loading-/g,      ""   )}
-* 
+    const jsContent = `/**
+* Returns a customized SVG string for icon ${baseName.replace(/icon-/g,      ""   )}
 * ![${baseName}](${svgBase64})
 * @param {Object} options - Configuration options
 * @param {string[]} [options.colors] - Array of hex colors to replace existing colors
@@ -117,7 +114,7 @@ function customSVG( options: LoadingOptions, svgString: string) {
         });
     }
     if (!raw) 
-        svgString = \`<img alt="loading-icon" src="data:image/svg+xml;utf8,\${encodeURIComponent(svgString)}" />\`
+        svgString = \`<img alt="icon" src="data:image/svg+xml;utf8,\${encodeURIComponent(svgString)}" />\`
 
     return svgString;
 }
