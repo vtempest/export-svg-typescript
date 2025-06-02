@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="400px" src="https://i.imgur.com/3PcYP4o.png" />
+    <img  src="https://i.imgur.com/LkLbPYE.png" />
 </p>
 <p align="center">
      <a href="https://github.com/vtempest/export-svg-typescript/discussions">
