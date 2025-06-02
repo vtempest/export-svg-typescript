@@ -27,7 +27,7 @@ Clone this repo and run `npm run demo` to see icons in demo folder.
 
 ```javascript
 import { loadingDoubleRing } from './demo';
-
+ 
 loadingDoubleRing({size: 200, colors: ["#5345bb"] })
 ```
 ![screenshot](https://i.imgur.com/aXczCC2.png)
