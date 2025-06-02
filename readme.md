@@ -1,8 +1,23 @@
-## export-svg-typescript
-<a href="https://npmjs.org/package/export-svg-typescript">
-<img alt="NPM Version" src="https://img.shields.io/npm/v/export-svg-typescript" />
-</a>     <img src="https://img.shields.io/github/last-commit/vtempest/export-svg-typescript.svg?style=flat-square" alt="GitHub last commit" />
+<p align="center">
+    <img width="400px" src="https://i.imgur.com/3PcYP4o.png" />
+</p>
+<p align="center">
+     <a href="https://github.com/vtempest/export-svg-typescript/discussions">
+     <img alt="GitHub Stars" src="https://img.shields.io/github/stars/vtempest/export-svg-typescript" /></a>
+    <a href="https://npmjs.org/package/export-svg-typescript">
+    <img alt="NPM Version" src="https://img.shields.io/npm/v/export-svg-typescript" />
+    </a>     
+    <img src="https://img.shields.io/github/last-commit/vtempest/export-svg-typescript.svg?style=flat-square" alt="GitHub last commit" />
+    <a href="https://github.com/vtempest/export-svg-typescript/discussions">
+    <img alt="GitHub Discussions"
+        src="https://img.shields.io/github/discussions/vtempest/export-svg-typescript" />
+    </a>
+    <a href="http://makeapullrequest.com">
+        <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/>
+    </a>
+</p>
 
+## export-svg-typescript
 
 Convert a folder of SVG icons into a color-customizable, tree-shakable TypeScript export `index.ts` that works with any component framework without SVG or Vite compiler issues.
 
