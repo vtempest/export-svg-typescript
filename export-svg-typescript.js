@@ -43,7 +43,7 @@ export function convertSVGFolderToExportIndex(inputFolder, indexPath) {
 
     const jsContent = `
 /**
-* Returns a customized SVG string for loading icon ${baseName.replace(/loading-/g,      ""   )}
+* Returns a customized SVG string for icon ${baseName.replace(/loading-/g,      ""   )}
 * 
 * ![${baseName}](${svgBase64})
 * @param {Object} options - Configuration options
