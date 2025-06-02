@@ -11,6 +11,7 @@ Convert a folder of SVG icons into a color-customizable, tree-shakable TypeScrip
 Global install:
 ```
 npm install -g export-svg-typescript
+```
 Or add to package.json:
 ```
  "icons": "npx export-svg-typescript -i ./src/icons",
