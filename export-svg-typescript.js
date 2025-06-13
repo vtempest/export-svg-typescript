@@ -35,7 +35,9 @@ export function convertSVGFolderToExportIndex(inputFolder, indexPath) {
     const defaultWidth = widthMatch ? widthMatch[1] : "100";
     const defaultHeight = heightMatch ? heightMatch[1] : "100";
 
-    // Convert SVG string to Base64
+    if (!widthMatch.length)
+      svgContent = svgContent.replace('<svg', '<svg width="100" height="100"')
+      // Convert SVG string to Base64
     const svgBase64 = `data:image/svg+xml;base64,${btoa(
       unescape(encodeURIComponent(svgContent))
     )}`;
@@ -114,7 +116,7 @@ function customSVG( options: LoadingOptions, svgString: string) {
         });
     }
     if (!raw) 
-        svgString = \`<img alt="icon" src="data:image/svg+xml;utf8,\${encodeURIComponent(svgString)}" />\`
+        svgString = \`<img width="\${finalWidth}" height="\${finalHeight}" alt="icon" src="data:image/svg+xml;utf8,\${encodeURIComponent(svgString)}" />\`
 
     return svgString;
 }
