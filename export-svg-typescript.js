@@ -27,19 +27,19 @@ export function convertSVGFolderToExportIndex(inputFolder, indexPath) {
     const baseName = path.basename(svgFile, ".svg");
 
     // Read SVG content
-    let svgContent = fs.readFileSync(inputPath, "utf8");
+    let svgPreview, svgContent = fs.readFileSync(inputPath, "utf8");
 
     // Extract original dimensions from SVG
-    const widthMatch = svgContent.match(/width="(\d+)"/);
-    const heightMatch = svgContent.match(/height="(\d+)"/);
-    const defaultWidth = widthMatch ? widthMatch[1] : "100";
-    const defaultHeight = heightMatch ? heightMatch[1] : "100";
+    const widthMatch = svgContent.match(/width="(\d+)(px)*"/);
+    const heightMatch = svgContent.match(/height="(\d+)(px)*"/);
+    const defaultWidth = widthMatch ? widthMatch[1] : 100;
+    const defaultHeight = heightMatch ? heightMatch[1] : 100;
 
-    if (!widthMatch)
-      svgContent = svgContent.replace('<svg', '<svg width="100px" height="100px"')
+    if (!widthMatch || defaultWidth > 400)
+      svgPreview = svgContent.replace(/width="(\d+)(px)*"/, '').replace(/height="(\d+)(px)*"/, '').replace('<svg', '<svg width="100px" height="100px"')
       // Convert SVG string to Base64
     const svgBase64 = `data:image/svg+xml;base64,${btoa(
-      unescape(encodeURIComponent(svgContent))
+      unescape(encodeURIComponent(svgPreview || svgContent))
     )}`;
 
     const jsContent = `/**
