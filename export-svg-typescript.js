@@ -35,7 +35,7 @@ export function convertSVGFolderToExportIndex(inputFolder, indexPath) {
     const defaultWidth = widthMatch ? widthMatch[1] : "100";
     const defaultHeight = heightMatch ? heightMatch[1] : "100";
 
-    if (!widthMatch.length)
+    if (!widthMatch)
       svgContent = svgContent.replace('<svg', '<svg width="100" height="100"')
       // Convert SVG string to Base64
     const svgBase64 = `data:image/svg+xml;base64,${btoa(
