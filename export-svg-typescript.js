@@ -27,7 +27,7 @@ export function convertSVGFolderToExportIndex(inputFolder, indexPath) {
     const baseName = path.basename(svgFile, ".svg");
 
     // Read SVG content
-    const svgContent = fs.readFileSync(inputPath, "utf8");
+    let svgContent = fs.readFileSync(inputPath, "utf8");
 
     // Extract original dimensions from SVG
     const widthMatch = svgContent.match(/width="(\d+)"/);
