@@ -36,7 +36,7 @@ export function convertSVGFolderToExportIndex(inputFolder, indexPath) {
     const defaultHeight = heightMatch ? heightMatch[1] : "100";
 
     if (!widthMatch)
-      svgContent = svgContent.replace('<svg', '<svg width="100" height="100"')
+      svgContent = svgContent.replace('<svg', '<svg width="100px" height="100px"')
       // Convert SVG string to Base64
     const svgBase64 = `data:image/svg+xml;base64,${btoa(
       unescape(encodeURIComponent(svgContent))
@@ -44,6 +44,7 @@ export function convertSVGFolderToExportIndex(inputFolder, indexPath) {
 
     const jsContent = `/**
 * Returns a customized SVG string for icon ${baseName.replace(/icon-/g,      ""   )}
+*
 * ![${baseName}](${svgBase64})
 * @param {Object} options - Configuration options
 * @param {string[]} [options.colors] - Array of hex colors to replace existing colors

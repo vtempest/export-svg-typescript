@@ -2,20 +2,22 @@
 
 /**
 * Returns a customized SVG string for icon loading-bouncy-ball
-* ![loading-bouncy-ball](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6IGF1dG87IGRpc3BsYXk6IGJsb2NrOyAiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48Y2lyY2xlIGZpbGw9IiNlMTViNjQiIHI9IjEzIiBjeT0iMjMiIGN4PSI1MCI+CiAgPGFuaW1hdGUgdmFsdWVzPSIyMzs3NzsyMyIga2V5VGltZXM9IjA7MC41OzEiIGtleVNwbGluZXM9IjAuNDUgMCAwLjkgMC41NTswIDAuNDUgMC41NSAwLjkiIGNhbGNNb2RlPSJzcGxpbmUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiBhdHRyaWJ1dGVOYW1lPSJjeSI+PC9hbmltYXRlPgo8L2NpcmNsZT48Zz48L2c+PC9nPjwvc3ZnPg==)
+*
+* ![loading-bouncy-ball](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMTAwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiBzdHlsZT0ic2hhcGUtcmVuZGVyaW5nOiBhdXRvOyBkaXNwbGF5OiBibG9jazsgIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGc+PGNpcmNsZSBmaWxsPSIjZTE1YjY0IiByPSIxMyIgY3k9IjIzIiBjeD0iNTAiPgogIDxhbmltYXRlIHZhbHVlcz0iMjM7Nzc7MjMiIGtleVRpbWVzPSIwOzAuNTsxIiBrZXlTcGxpbmVzPSIwLjQ1IDAgMC45IDAuNTU7MCAwLjQ1IDAuNTUgMC45IiBjYWxjTW9kZT0ic3BsaW5lIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIgYXR0cmlidXRlTmFtZT0iY3kiPjwvYW5pbWF0ZT4KPC9jaXJjbGU+PGc+PC9nPjwvZz48L3N2Zz4=)
 * @param {Object} options - Configuration options
 * @param {string[]} [options.colors] - Array of hex colors to replace existing colors
-* @param {number} [options.width] - Width of the SVG (default: 200)
-* @param {number} [options.height] - Height of the SVG (default: 200)
+* @param {number} [options.width] - Width of the SVG (default: 100)
+* @param {number} [options.height] - Height of the SVG (default: 100)
 * @param {number} [options.size] - Size for both width and height
 * @example loadingBouncyBall({ colors: ['#0099e5', '#ff4c4c'], size: 100 });
 * @returns {string} SVG string with applied customizations
 */
 export const  loadingBouncyBall = (options: LoadingOptions = {}) => customSVG(options, 
-`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="200" height="200" style="shape-rendering: auto; display: block; "><g><circle fill="#e15b64" r="13" cy="23" cx="50"><animate values="23;77;23" keyTimes="0;0.5;1" keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" calcMode="spline" repeatCount="indefinite" dur="1s" attributeName="cy"></animate></circle><g></g></g></svg>`);
+`<svg width="100px" height="100px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="shape-rendering: auto; display: block; "><g><circle fill="#e15b64" r="13" cy="23" cx="50"><animate values="23;77;23" keyTimes="0;0.5;1" keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" calcMode="spline" repeatCount="indefinite" dur="1s" attributeName="cy"></animate></circle><g></g></g></svg>`);
 
 /**
 * Returns a customized SVG string for icon loading-double-ring
+*
 * ![loading-double-ring](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6IGF1dG87IGRpc3BsYXk6IGJsb2NrOyAiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48Y2lyY2xlIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWRhc2hhcnJheT0iNTAuMjY1NDgyNDU3NDM2NjkgNTAuMjY1NDgyNDU3NDM2NjkiIHN0cm9rZT0iIzAwOTllNSIgc3Ryb2tlLXdpZHRoPSI4IiByPSIzMiIgY3k9IjUwIiBjeD0iNTAiPgogIDxhbmltYXRlVHJhbnNmb3JtIHZhbHVlcz0iMCA1MCA1MDszNjAgNTAgNTAiIGtleVRpbWVzPSIwOzEiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB0eXBlPSJyb3RhdGUiIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSI+PC9hbmltYXRlVHJhbnNmb3JtPgo8L2NpcmNsZT4KPGNpcmNsZSBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiIHN0cm9rZS1kYXNob2Zmc2V0PSIzNi4xMjgzMTU1MTYyODI2MiIgc3Ryb2tlLWRhc2hhcnJheT0iMzYuMTI4MzE1NTE2MjgyNjIgMzYuMTI4MzE1NTE2MjgyNjIiIHN0cm9rZT0iI2ZmNGM0YyIgc3Ryb2tlLXdpZHRoPSI4IiByPSIyMyIgY3k9IjUwIiBjeD0iNTAiPgogIDxhbmltYXRlVHJhbnNmb3JtIHZhbHVlcz0iMCA1MCA1MDstMzYwIDUwIDUwIiBrZXlUaW1lcz0iMDsxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIgdHlwZT0icm90YXRlIiBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iPjwvYW5pbWF0ZVRyYW5zZm9ybT4KPC9jaXJjbGU+PGc+PC9nPjwvZz48L3N2Zz4=)
 * @param {Object} options - Configuration options
 * @param {string[]} [options.colors] - Array of hex colors to replace existing colors
@@ -30,6 +32,7 @@ export const  loadingDoubleRing = (options: LoadingOptions = {}) => customSVG(op
 
 /**
 * Returns a customized SVG string for icon loading-eclipse
+*
 * ![loading-eclipse](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6IGF1dG87IGRpc3BsYXk6IGJsb2NrOyI+PGc+PHBhdGggc3Ryb2tlPSJub25lIiBmaWxsPSIjZmZiOTAwIiBkPSJNMTAgNTBBNDAgNDAgMCAwIDAgOTAgNTBBNDAgNDIgMCAwIDEgMTAgNTAiPgogIDxhbmltYXRlVHJhbnNmb3JtIHZhbHVlcz0iMCA1MCA1MTszNjAgNTAgNTEiIGtleVRpbWVzPSIwOzEiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBkdXI9IjFzIiB0eXBlPSJyb3RhdGUiIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSI+PC9hbmltYXRlVHJhbnNmb3JtPgo8L3BhdGg+PGc+PC9nPjwvZz48L3N2Zz4=)
 * @param {Object} options - Configuration options
 * @param {string[]} [options.colors] - Array of hex colors to replace existing colors
@@ -79,7 +82,7 @@ function customSVG( options: LoadingOptions, svgString: string) {
         });
     }
     if (!raw) 
-        svgString = `<img alt="icon" src="data:image/svg+xml;utf8,${encodeURIComponent(svgString)}" />`
+        svgString = `<img width="${finalWidth}" height="${finalHeight}" alt="icon" src="data:image/svg+xml;utf8,${encodeURIComponent(svgString)}" />`
 
     return svgString;
 }
