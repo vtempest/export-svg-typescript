@@ -56,7 +56,7 @@ export function convertSVGFolderToExportIndex(inputFolder, indexPath) {
       )}({ colors: ['#0099e5', '#ff4c4c'], size: 100 });
 * @returns {string} SVG string with applied customizations
 */
-export const  ${toCamelCase(baseName)} = (options: LoadingOptions = {}) => customSVG(options, 
+export const ${toCamelCase(baseName)} = (options: LoadingOptions = {}) => customSVG(options, 
 \`${svgContent
       .replace(/`/g, "\\`")
       .replace(' xmlns:xlink="http://www.w3.org/1999/xlink"', "")
@@ -94,13 +94,16 @@ export const  ${toCamelCase(baseName)} = (options: LoadingOptions = {}) => custo
 function customSVG( options: LoadingOptions, svgString: string) {
     const { colors = [], width, height, size, raw = false } = options;
 
-    const widthMatch = svgString.match(/width="(d+)"/);
-    const heightMatch = svgString.match(/height="(d+)"/);
+    const widthMatch = svgString.match(/width="[^"]*"/);
+    const heightMatch = svgString.match(/height="[^"]*"/);
     const finalWidth = size || width || widthMatch?.[1] || '100';
     const finalHeight = size || height || heightMatch?.[1] || '100';
-    
-    svgString = svgString.replace(/width="[^"]*"/g, \`width="\${finalWidth}"\`);
-    svgString = svgString.replace(/height="[^"]*"/g, \`height="\${finalHeight}"\`);
+
+    if (width || height || size) {
+        svgString = svgString.replace(/width="[^"]*"/, \`width="${finalWidth}px"\`);
+        svgString = svgString.replace(/height="[^"]*"/, \`height="${finalHeight}px"\`);
+    }
+
 
     // If colors array is provided, replace hex colors in order of appearance
     if (colors && colors.length > 0) {
@@ -133,13 +136,9 @@ interface LoadingOptions {
   /** Whether to return the raw SVG string or an img tag */
   raw?: boolean;
 }
-  
 `;
 
   fs.writeFileSync(indexPath, indexContent);
-
-  
-
 
   console.log(
     `✨ Converted ${svgFiles.length} SVG files to customizable JS export files`
