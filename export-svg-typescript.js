@@ -100,8 +100,8 @@ function customSVG( options: LoadingOptions, svgString: string) {
     const finalHeight = size || height || heightMatch?.[1] || '100';
 
     if (width || height || size) {
-        svgString = svgString.replace(/width="[^"]*"/, \`width="${finalWidth}px"\`);
-        svgString = svgString.replace(/height="[^"]*"/, \`height="${finalHeight}px"\`);
+        svgString = svgString.replace(/width="[^"]*"/, \`width="\${finalWidth}px"\`);
+        svgString = svgString.replace(/height="[^"]*"/, \`height="\${finalHeight}px"\`);
     }
 
 
@@ -120,7 +120,7 @@ function customSVG( options: LoadingOptions, svgString: string) {
         });
     }
     if (!raw) 
-        svgString = \`<img width="\${finalWidth}" height="\${finalHeight}" alt="icon" src="data:image/svg+xml;utf8,\${encodeURIComponent(svgString)}" />\`
+        svgString = (width || height || size ? \`<img width="\${finalWidth}" height="\${finalHeight}"\` : '<img') + ' alt="icon" src="data:image/svg+xml;utf8,\${encodeURIComponent(svgString)}" />\`
 
     return svgString;
 }
