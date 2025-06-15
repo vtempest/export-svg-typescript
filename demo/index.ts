@@ -100,7 +100,7 @@ function customSVG( options: LoadingOptions, svgString: string) {
         });
     }
     if (!raw) 
-        svgString = (width || height || size ? `<img width="${finalWidth}" height="${finalHeight}"` : '<img') + ' alt="icon" src="data:image/svg+xml;utf8,${encodeURIComponent(svgString)}" />`
+        svgString = (width || height || size ? `<img width="${finalWidth}" height="${finalHeight}"` : '<img') + '\` alt="icon" src="data:image/svg+xml;utf8,${encodeURIComponent(svgString)}" />`
 
     return svgString;
 }
